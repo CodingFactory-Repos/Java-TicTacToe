@@ -5,7 +5,7 @@
 ## Where is the game file located?
 
 ```bash
-$ src/me/Main.java
+$ src/me/loule/Main.java
 ```
 
 ## Contributing
