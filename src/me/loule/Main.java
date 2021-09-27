@@ -121,6 +121,12 @@ public class Main {
                         return true;
                     }
                 }
+                if (i == 2 || i == 4 || i == 6) {
+                    if (board[i].equals(board[i + 2]) && board[i].equals(board[i + 4])) {
+                        System.out.println("💁 " + player[0] + " a gagné !");
+                        return true;
+                    }
+                }
             }
         }
 
