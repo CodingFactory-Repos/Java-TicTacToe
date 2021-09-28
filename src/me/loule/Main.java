@@ -19,11 +19,11 @@ public class Main {
         // Creation of a TicTacToe //
         /////////////////////////////
 
-        //  Prompt player names
+        // Prompt player names
         System.out.print("👨‍💻 Enter first player name: ");
-        String player1[] = {scanner.nextLine(), "X"};
+        String player1[] = { scanner.nextLine(), "X" };
         System.out.print("👩‍💻 Enter second player name: ");
-        String player2[] = {scanner.nextLine(), "O"};
+        String player2[] = { scanner.nextLine(), "O" };
 
         // Clear Console
         System.out.print("\033[H\033[2J");
@@ -35,9 +35,8 @@ public class Main {
         System.out.println("💁 Préparation du jeu...");
 
         // Game Options
-        String board[] = {" ", " ", " ", " ", " ", " ", " ", " ", " "};
+        String board[] = { " ", " ", " ", " ", " ", " ", " ", " ", " " };
         int turn = 1;
-
 
         System.out.println("💁 Je pense que le jeu peux maintenant commencer...");
 
@@ -78,7 +77,7 @@ public class Main {
 
             if (checkWin(board, player1) || checkWin(board, player2)) {
                 break;
-            } else if(turn >= board.length) {
+            } else if (turn >= board.length) {
                 // Clear Console
                 System.out.print("\033[H\033[2J");
                 System.out.println("💁 Aucun joueurs ne gagnent cette manche");
@@ -101,7 +100,7 @@ public class Main {
 
     // Check if player win
     public static boolean checkWin(String[] board, String[] player) {
-        for(int i = 0; i < board.length; i++) {
+        for (int i = 0; i < board.length; i++) {
             if (board[i].equals(player[1])) {
                 if (i == 0 || i == 3 || i == 6) {
                     if (board[i].equals(board[i + 1]) && board[i].equals(board[i + 2])) {
