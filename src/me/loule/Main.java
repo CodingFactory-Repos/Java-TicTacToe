@@ -115,13 +115,13 @@ public class Main {
                     }
                 }
                 if (i == 0 || i == 4 || i == 8) {
-                    if (board[i].equals(board[i + 4]) && board[i].equals(board[i + 8])) {
+                    if (board[0].equals(board[0 + 4]) && board[0].equals(board[0 + 8])) {
                         System.out.println("💁 " + player[0] + " a gagné !");
                         return true;
                     }
                 }
                 if (i == 2 || i == 4 || i == 6) {
-                    if (board[i].equals(board[i + 2]) && board[i].equals(board[i + 4])) {
+                    if (board[2].equals(board[2 + 2]) && board[i].equals(board[2 + 4])) {
                         System.out.println("💁 " + player[0] + " a gagné !");
                         return true;
                     }
