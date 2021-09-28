@@ -22,8 +22,12 @@ public class Main {
         // Prompt player names
         System.out.print("👨‍💻 Enter first player name: ");
         String player1[] = { scanner.nextLine(), "X" };
-        System.out.print("👩‍💻 Enter second player name: ");
+        System.out.print("👩‍💻 Enter second player name, if you prefer to play with a computer, press enter : ");
         String player2[] = { scanner.nextLine(), "O" };
+
+        if(player2[0] == ""){
+            player2[0] = "Computer";
+        }
 
         // Clear Console
         System.out.print("\033[H\033[2J");
@@ -57,16 +61,28 @@ public class Main {
                     System.out.println("💁 La case est déjà prise !");
                 }
             } else {
-                // Player 2 turn
-                System.out.println("💁 " + player2[0] + " c'est à toi de jouer !");
-                System.out.print("💁 Choisis une case: ");
-                int choice = scanner.nextInt();
-                scanner.nextLine();
-                if (board[choice - 1].equals(" ")) {
-                    board[choice - 1] = player2[1];
-                    turn++;
+                if(player2[0] == "Computer"){
+                    System.out.println("💁 " + player2[0] + " c'est à toi de jouer !");
+                    System.out.println("💁 Je choisis une case...");
+                    int choice = (int) (Math.random() * 9);
+                    if (board[choice].equals(" ")) {
+                        board[choice] = player2[1];
+                        turn++;
+                    } else {
+                        System.out.println("💁 La case est déjà prise !");
+                    }
                 } else {
-                    System.out.println("💁 La case est déjà prise !");
+                    // Player 2 turn
+                    System.out.println("💁 " + player2[0] + " c'est à toi de jouer !");
+                    System.out.print("💁 Choisis une case: ");
+                    int choice = scanner.nextInt();
+                    scanner.nextLine();
+                    if (board[choice - 1].equals(" ")) {
+                        board[choice - 1] = player2[1];
+                        turn++;
+                    } else {
+                        System.out.println("💁 La case est déjà prise !");
+                    }
                 }
             }
             // Clear console
